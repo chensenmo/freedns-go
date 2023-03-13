@@ -38,9 +38,9 @@ jobs:
     - name: Build for All Platforms
       run: make build_all
 
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v2
+    - name : upload builds
+      uses: actions/upload-artifact@master
+      if: always()
       with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: Add build artifact
-          title: Add build artifact
+          name: xupdate_apk
+          path: ${{ github.workspace }}/build
