@@ -42,5 +42,5 @@ jobs:
       uses: actions/upload-artifact@master
       if: always()
       with:
-          name: xupdate_apk
+          name: update_all_builds
           path: ${{ github.workspace }}/build
