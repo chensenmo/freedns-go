@@ -13,6 +13,7 @@ func normalizeDnsAddress(addr string) (string, error) {
 	} else if host == "" {
 		// for addrs like ":53", use default host
 		host = "0.0.0.0"
+		port = "5353"
 	}
 
 	if net.ParseIP(host) == nil {
