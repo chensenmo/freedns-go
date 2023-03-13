@@ -37,3 +37,10 @@ jobs:
 
     - name: Build for All Platforms
       run: make build_all
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v2
+      with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: Add build artifact
+          title: Add build artifact
